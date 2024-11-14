@@ -1,15 +1,37 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <!-- Botón de retroceso -->
-    <ion-buttons slot="start">
-      <ion-back-button defaultHref="/"></ion-back-button>
-    </ion-buttons>
-
-    <!-- Título de la página -->
     <ion-title>Intervalos</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
+
+  <!-- Pregunta -->
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Escucha el intervalo</ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+      <p>{{ intervalQuestion }}</p>
+
+      <!-- Opciones de respuestas -->
+      <ion-button expand="full" (click)="checkAnswer('Unión')">Unión</ion-button>
+      <ion-button expand="full" (click)="checkAnswer('2ª menor')">2ª menor</ion-button>
+      <ion-button expand="full" (click)="checkAnswer('2ª mayor')">2ª mayor</ion-button>
+      <ion-button expand="full" (click)="checkAnswer('3ª mayor')">3ª mayor</ion-button>
+      <ion-button expand="full" (click)="checkAnswer('4ª justa')">4ª justa</ion-button>
+
+      <!-- Mensaje de retroalimentación -->
+      <div *ngIf="feedbackMessage">
+        <p>{{ feedbackMessage }}</p>
+      </div>
+    </ion-card-content>
+  </ion-card>
+
+  <!-- Botón para reproducir el intervalo -->
+  <ion-button expand="full" (click)="playInterval()">
+    Reproducir intervalo
+  </ion-button>
 
 </ion-content>
