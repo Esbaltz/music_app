@@ -1,0 +1,16 @@
+.card-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Grilla responsiva */
+    gap: 16px; /* Espacio entre las tarjetas */
+    padding: 16px; /* Padding general del contenedor */
+  }
+
+  ion-card {
+    border-radius: 10px; /* Bordes redondeados para las tarjetas */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave para las tarjetas */
+  }
+
+  ion-card img {
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+  }

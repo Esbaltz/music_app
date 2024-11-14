@@ -1,17 +1,56 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Tab 1
+      Inicio
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 1</ion-title>
-    </ion-toolbar>
-  </ion-header>
 
-  <app-explore-container name="Tab 1 page"></app-explore-container>
+  <!-- Contenedor con grilla para organizar las tarjetas en columnas -->
+  <div class="card-container">
+  
+    <!-- Tarjeta de Intervalos -->
+    <ion-card [routerLink]="['/intervalos']">
+      <img alt="Imagen de una partitura" src="assets/img/intervalos.jpg" />
+      <ion-card-header>
+        <ion-card-title>Intervalos</ion-card-title>
+        <ion-card-subtitle>Identifica los intervalos musicales</ion-card-subtitle>
+      </ion-card-header>
+  
+      <ion-card-content>
+        A través de estos ejercicios, aprenderás a identificar intervalos, lo que te permitirá desarrollar tu sentido melódico y mejorar tu capacidad para transponer melodías a otras tonalidades.
+      </ion-card-content>
+    </ion-card>
+
+    <!-- Tarjeta de Acordes -->
+    <ion-card [routerLink]="['/acordes']">
+      <img alt="Imagen de una partitura" src="assets/img/acordes.jpg" />
+      <ion-card-header>
+        <ion-card-title>Acordes</ion-card-title>
+        <ion-card-subtitle>Identifica los acordes musicales</ion-card-subtitle>
+      </ion-card-header>
+  
+      <ion-card-content>
+        Con estos ejercicios, aprenderás a identificar diferentes tipos de acordes, lo que te permitirá comprender mejor la armonía y mejorar tu capacidad para interpretar y componer música.
+      </ion-card-content>
+    </ion-card>
+
+    <!-- Tarjeta de Escalas -->
+    <ion-card [routerLink]="['/escalas']">
+      <img alt="Imagen de una partitura" src="assets/img/escalas.jpg" />
+      <ion-card-header>
+        <ion-card-title>Escalas</ion-card-title>
+        <ion-card-subtitle>Identifica las escalas musicales</ion-card-subtitle>
+      </ion-card-header>
+  
+      <ion-card-content>
+        Con estos ejercicios, aprenderás a identificar diferentes tipos de escalas, lo que te permitirá comprender mejor la estructura de las melodías y mejorar tu capacidad para improvisar y componer música.
+      </ion-card-content>
+    </ion-card>
+
+  </div>
+
 </ion-content>
+
