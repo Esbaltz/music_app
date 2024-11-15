@@ -1,10 +1,8 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <!-- Botón de retroceso -->
     <ion-buttons slot="start">
       <ion-back-button defaultHref="/"></ion-back-button>
     </ion-buttons>
-
     <ion-title>partituras</ion-title>
   </ion-toolbar>
 </ion-header>
@@ -17,20 +15,29 @@
   </ion-header>
 
   <div class="container">
-
+    <!-- Contador de notas -->
     <ion-text>
-      <h3>Intentos: {{ notasAdivinadas }}/{{ totalNotas }}</h3>
+      <h3>Notas correctas: {{ notasAdivinadas }}/{{ totalNotas }}</h3>
     </ion-text>
 
     <!-- Imagen de la nota musical -->
-    <div class="sheet-music">
-      <img [src]="notaActual?.imagen" alt="Nota musical" />
+     <ion-card>
+      <div class="sheet-music">
+        <img [src]="notaActual?.imagen" alt="Nota musical" />
+      </div>
+     </ion-card>
+
+    <!-- Botones para las notas sostenidas -->
+    <div class="sharp-note-buttons">
+      <ion-button *ngFor="let nota of notasSostenidas" (click)="verificarRespuesta(nota)">
+        {{ nota }}
+      </ion-button>
     </div>
 
-    <!-- Botones para adivinar la nota -->
+    <!-- Botones para las notas naturales -->
     <div class="note-buttons">
-      <ion-button *ngFor="let nota of notas" (click)="verificarRespuesta(nota.cifradoAmericano)">
-        {{ nota.cifradoAmericano }}
+      <ion-button *ngFor="let nota of getCifradosUnicos()" (click)="verificarRespuesta(nota)">
+        {{ nota }}
       </ion-button>
     </div>
 

@@ -11,5 +11,20 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  
+  <div class="container">
+  <ion-card>
+    <div class="sheet-music">
+      <img [src]="acordeActual?.imagen" alt="Acorde musical" />
+    </div>
+   </ion-card>
+
+   <!-- Botones para las notas naturales -->
+   <div class="note-buttons">
+    <ion-button *ngFor="let nota of getCifradosUnicos()" (click)="verificarRespuesta(nota)">
+      {{ nota }}
+    </ion-button>
+  </div>
+
+  <ion-text *ngIf="mensaje" color="primary">{{ mensaje }}</ion-text>
+</div>
 </ion-content>
