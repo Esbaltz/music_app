@@ -17,6 +17,10 @@ const routes: Routes = [
   {
     path: 'escalas',
     loadChildren: () => import('./escalas/escalas.module').then( m => m.EscalasPageModule)
+  },
+  {
+    path: 'partituras',
+    loadChildren: () => import('./partituras/partituras.module').then( m => m.PartiturasPageModule)
   }
 ];
 @NgModule({

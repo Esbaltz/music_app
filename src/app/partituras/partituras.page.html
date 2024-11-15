@@ -1,0 +1,32 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>partituras</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">partituras</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <div class="container">
+    <!-- Imagen de la nota musical que cambia -->
+    <div class="sheet-music">
+      <img [src]="notaActual?.imagen" alt="Nota musical" />
+    </div>
+
+    <!-- Input para adivinar la nota -->
+    <ion-item>
+      <ion-label position="stacked">¿Cuál es esta nota?</ion-label>
+      <ion-input [(ngModel)]="respuesta" placeholder="Escribe la nota aquí"></ion-input>
+    </ion-item>
+
+    <!-- Botón para enviar la respuesta -->
+    <ion-button expand="full" (click)="verificarRespuesta()">Enviar respuesta</ion-button>
+
+    <!-- Mensaje de respuesta -->
+    <ion-text *ngIf="mensaje" color="primary">{{ mensaje }}</ion-text>
+  </div>
+</ion-content>

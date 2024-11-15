@@ -10,6 +10,19 @@
 
   <!-- Contenedor con grilla para organizar las tarjetas en columnas -->
   <div class="card-container">
+
+    <!-- Tarjeta de Partituras -->
+    <ion-card [routerLink]="['/partituras']">
+      <img alt="Imagen de una partitura" src="assets/img/partitura.jpg" />
+      <ion-card-header>
+        <ion-card-title>Partituras</ion-card-title>
+        <ion-card-subtitle>Identifica las notas en la partitura</ion-card-subtitle>
+      </ion-card-header>
+  
+      <ion-card-content>
+        Aquí tendrás que leer las notas que vayan aparenciendo en la partitura y seleccionar la alternativa correcta.
+      </ion-card-content>
+    </ion-card>
   
     <!-- Tarjeta de Intervalos -->
     <ion-card [routerLink]="['/intervalos']">
